@@ -10,6 +10,12 @@
 
 > you can 👀 a live demo [here](https://bestkolobok.github.io/vue3-jsoneditor/)
 
+## ❗️️️ Compatibility with nuxt versions
+
+- Nuxt 3 - full support
+- Nuxt bridge - not tested
+- Nuxt 2 - currently not support
+
 ## ☑️ Installation
 
 ```bash
