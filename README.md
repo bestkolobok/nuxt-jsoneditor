@@ -40,7 +40,8 @@ export default defineNuxtConfig({
         /**
         *
         * SET GLOBAL OPTIONS
-        * Jsoneditor options, You can look at the detailed  https://github.com/josdejong/jsoneditor/blob/master/docs/api.md#configuration-options?blank
+        * Jsoneditor options, You can look at the detailed 
+        * https://github.com/josdejong/jsoneditor/blob/master/docs/api.md#configuration-options?blank
         * 
         * */
     }
