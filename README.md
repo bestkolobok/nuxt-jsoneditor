@@ -2,6 +2,10 @@
 
 # nuxt-jsoneditor
 
+## 🕹 Demo
+
+> you can 👀 a live demo [here](https://bestkolobok.github.io/vue3-jsoneditor/)
+
 ## ☑️ Installation
 
 ```bash
