@@ -1,4 +1,4 @@
-import { defineNuxtPlugin, defineNuxtComponent } from '#app'
+import { defineNuxtPlugin, useRuntimeConfig, defineNuxtComponent } from '#app'
 import EmptyComponent from './EmptyComponent.vue';
 
 export default defineNuxtPlugin(async (nuxtApp) => {

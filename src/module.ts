@@ -26,12 +26,17 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.runtimeConfig.public.jsonEditorConfig = options as T;
 
-    const pluginFilename = options.includeCss ? 'pluginIncludeCss' : 'plugin';
-
-    addPlugin({
-      src: resolve(runtimeDir, pluginFilename),
-      mode: "client",
-    })
+    if (options.includeCss) {
+      addPlugin({
+        src: resolve(runtimeDir, 'pluginIncludeCss'),
+        mode: "client",
+      })
+    } else {
+      addPlugin({
+        src: resolve(runtimeDir, 'plugin'),
+        mode: "client",
+      })
+    }
 
     addPlugin({
       src: resolve(runtimeDir, 'empty-plugin'),

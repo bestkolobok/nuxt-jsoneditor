@@ -73,8 +73,6 @@ export default defineNuxtConfig({
 </template>
 
 <script setup>
-  import {reactive} from 'vue';
-
   const json = reactive({
     array: [1, 2, 3],
     boolean: true,

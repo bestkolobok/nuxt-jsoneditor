@@ -1,4 +1,4 @@
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin, useRuntimeConfig } from '#app'
 import JsonEditor from 'vue3-ts-jsoneditor';
 
 export default defineNuxtPlugin((nuxtApp) => {
