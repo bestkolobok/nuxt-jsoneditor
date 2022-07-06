@@ -1,6 +1,6 @@
-[![npm version](https://badge.fury.io/js/vue3-ts-jsoneditor.svg)](https://badge.fury.io/js/vue3-ts-jsoneditor)
-![NPM](https://img.shields.io/npm/l/vue3-ts-jsoneditor)
-![npm](https://img.shields.io/npm/dm/vue3-ts-jsoneditor)
+[![npm version](https://badge.fury.io/js/nuxt-jsoneditor.svg)](https://badge.fury.io/js/nuxt-jsoneditor)
+![NPM](https://img.shields.io/npm/l/nuxt-jsoneditor)
+![npm](https://img.shields.io/npm/dm/nuxt-jsoneditor)
 
 ## 🇺🇦🇺🇦🇺🇦 [Stand With Ukraine](https://www.standwithukraine.how/) 🇺🇦🇺🇦🇺🇦
 
