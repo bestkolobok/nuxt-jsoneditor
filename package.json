@@ -1,7 +1,7 @@
 {
   "name": "nuxt-json-editor-module",
   "version": "0.0.1",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "type": "module",
   "exports": {
     ".": {
@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.4",
-    "defu": "^6.0.0",
     "vue3-ts-jsoneditor": "^0.3.1"
   },
   "devDependencies": {
