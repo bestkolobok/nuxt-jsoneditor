@@ -27,12 +27,11 @@ npm install nuxt-jsoneditor
 ### 👉 Add module
 
 ```javascript
-import { defineNuxtConfig } from 'nuxt'
-import JsonEditor from 'nuxt-jsoneditor';
+import { defineNuxtConfig } from 'nuxt';
 
 export default defineNuxtConfig({
   modules: [
-    JsonEditor
+    'nuxt-jsoneditor'
   ],
   jsoneditor: {
     componentName: 'JsonEditor',
