@@ -1,3 +1,7 @@
+[![npm version](https://badge.fury.io/js/vue3-ts-jsoneditor.svg)](https://badge.fury.io/js/vue3-ts-jsoneditor)
+![NPM](https://img.shields.io/npm/l/vue3-ts-jsoneditor)
+![npm](https://img.shields.io/npm/dm/vue3-ts-jsoneditor)
+
 ## 🇺🇦🇺🇦🇺🇦 [Stand With Ukraine](https://www.standwithukraine.how/) 🇺🇦🇺🇦🇺🇦
 
 # nuxt-jsoneditor
@@ -93,7 +97,7 @@ export default defineNuxtConfig({
 ### ☑️ Props
 | Name                  | Description                                                                                                                                                     | type            | default             |
 | --------------        | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-----------:   | :----------------:  |
-| options               | Jsoneditor options, You can look at the detailed  [configuration](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md#configuration-options?blank)  | Object          | { mode: 'tree' }    |
+| options               | Local Jsoneditor options, You can look at the detailed  [configuration](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md#configuration-options?blank)  | Object          | { mode: 'tree' }    |
 | json (v-model)        | Object value                                                                                                                                                    | Object          | { }                 |
 | jsonString (v-model)  | String value                                                                                                                                                    | String          | undefined           |
 | fullWidthButton       | Whether full screen switching is added                                                                                                                          | Boolean         | true                |
