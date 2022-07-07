@@ -1,6 +1,11 @@
 {
   "name": "nuxt-jsoneditor",
   "version": "0.1.0",
+  "author": {
+    "name": "Alex Guzey",
+    "email": "alex.guzey@gmail.com"
+  },
+  "private": false,
   "license": "Apache-2.0",
   "type": "module",
   "exports": {
@@ -14,6 +19,13 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bestkolobok/nuxt-jsoneditor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bestkolobok/nuxt-jsoneditor/issues"
+  },
   "scripts": {
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
