@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.4",
-    "vue3-ts-jsoneditor": "^0.4.0"
+    "vue3-ts-jsoneditor": "^1.0.5"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",

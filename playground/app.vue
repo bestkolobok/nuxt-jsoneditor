@@ -1,10 +1,12 @@
 <template>
   <div>
-    <vue-json-editor expand-on-init height="400" :options="{modes}" v-model:json="json" />
+    <vue-json-editor expand-on-init height="400" :options="options" v-model:json="json" />
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type {JSONEditorOptions} from '../src/module';
+
 const json = reactive({
   array: [1, 2, 3],
   boolean: true,
@@ -14,5 +16,7 @@ const json = reactive({
   string: 'Hello World',
 });
 
-const modes = reactive(['tree', 'view', 'form', 'code', 'text', 'preview']);
+const options: JSONEditorOptions = reactive({
+  modes: ['tree', 'view', 'form', 'code', 'text', 'preview']
+});
 </script>

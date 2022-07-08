@@ -15,12 +15,14 @@
 - Nuxt 3 - full support
 - Nuxt bridge - not tested
 - Nuxt 2 - currently not support
+<br>
 
 ## ☑️ Installation
 
 ```bash
 npm install nuxt-jsoneditor
 ```
+<br>
 
 ## ✅ Using
 
@@ -51,7 +53,7 @@ export default defineNuxtConfig({
 
 ### 👉 Use in template
 
-```html
+```vue
 <template>
   <json-editor 
     expand-on-init 
@@ -67,12 +69,14 @@ export default defineNuxtConfig({
 <template>
   <json-editor
     height="400" 
-    :options="{modes}" 
+    :options="options" 
     v-model:jsonString="jsonString"
   />
 </template>
 
-<script setup>
+<script setup lang="ts">
+  import type {JSONEditorOptions} from 'nuxt-jsoneditor';
+  
   const json = reactive({
     array: [1, 2, 3],
     boolean: true,
@@ -91,7 +95,9 @@ export default defineNuxtConfig({
     string: 'Hello World',
   }));
 
-  const modes = reactive(['tree', 'view', 'form', 'code', 'text', 'preview']);
+  const options: JSONEditorOptions = reactive({
+    modes: ['tree', 'view', 'form', 'code', 'text', 'preview']
+  });
   
   const onError = (error) => {
     //
@@ -107,11 +113,77 @@ export default defineNuxtConfig({
 | fullWidthButton       | Whether full screen switching is added                                                                                                                          | Boolean         | true                |
 | height                | Default height                                                                                                                                                  | String / Number | undefined           |
 | expandOnInit          | Expand all fields. Only applicable for mode 'tree', 'view', and 'form'                                                                                          | Boolean         | false               | 
+<br>
 
 ### ☑️ Events
 | Name  | Description      |
 | ----- | --------------   |
 | error | Wrong data error |
+<br>
+
+### ☑️ Use expose functions
+- <b>$collapseAll</b> - collapse all nodes
+- <b>$expandAll</b> - expand all nodes
+- <b>$getNodesByRange</b> - get nodes from <i>start</i> to <i>end</i> range
+
+```vue
+<template>
+  <json-editor
+    height="400" 
+    :options="options" 
+    ref="editor"
+    v-model:json="json"
+  />
+
+  <div>
+    <button @click="onCollapse">collapse all</button>
+
+    <button @click="onExpand">expand all</button>
+
+    <button @click="onGetNodesByRange">get node by range</button>
+  </div>
+</template>
+
+<script setup lang="ts">
+  import type {
+    JSONEditorOptions, 
+    SerializableNode
+  } from 'nuxt-jsoneditor';
+
+  const json = reactive({
+    array: [1, 2, 3],
+    boolean: true,
+    Null: null,
+    number: 123,
+    object: {a: 'b', c: 'd'},
+    string: 'Hello World',
+  });
+
+  const options: JSONEditorOptions = reactive({
+    modes: ['tree', 'view', 'form', 'code', 'text', 'preview']
+  });
+
+  const editor = ref();
+
+  const onCollapse = () => {
+    editor.value.$collapseAll();
+  };
+
+  const onExpand = () => {
+    editor.value.$expandAll();
+  };
+
+  const onGetNodesByRange = () => {
+    const node: SerializableNode = editor.value.$getNodesByRange(
+      {path: ['boolean']}, 
+      {path: ['object']}
+    );
+
+    console.log('NODE: ', node);
+  };
+</script>
+```
+<br>
 
 ## 🔨 Development
 

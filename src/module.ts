@@ -3,6 +3,8 @@ import { fileURLToPath } from 'url';
 import { defineNuxtModule, addPlugin } from '@nuxt/kit';
 import type {Params} from 'vue3-ts-jsoneditor';
 
+export type {JSONEditorOptions, Node, SelectionPosition, SerializableNode} from 'vue3-ts-jsoneditor';
+
 export interface ModuleOptions extends Params {
   includeCss?: boolean;
 }
