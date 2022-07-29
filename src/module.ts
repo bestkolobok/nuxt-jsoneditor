@@ -3,10 +3,9 @@ import { fileURLToPath } from 'url';
 import { defineNuxtModule, addPlugin } from '@nuxt/kit';
 import type {Params} from 'vue3-ts-jsoneditor';
 
-export type {JSONEditorOptions, Node, SelectionPosition, SerializableNode} from 'vue3-ts-jsoneditor';
+// export type {JSONEditorOptions, Node, SelectionPosition, SerializableNode} from 'vue3-ts-jsoneditor';
 
 export interface ModuleOptions extends Params {
-  includeCss?: boolean;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -19,7 +18,6 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {
     componentName: 'JsonEditor',
-    includeCss: true,
     options: {}
   },
   setup<T> (options: ModuleOptions, nuxt) {
@@ -28,21 +26,9 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.runtimeConfig.public.jsonEditorConfig = options as T;
 
-    if (options.includeCss) {
-      addPlugin({
-        src: resolve(runtimeDir, 'pluginIncludeCss'),
-        mode: "client",
-      })
-    } else {
-      addPlugin({
-        src: resolve(runtimeDir, 'plugin'),
-        mode: "client",
-      })
-    }
-
     addPlugin({
-      src: resolve(runtimeDir, 'empty-plugin'),
-      mode: "server",
+      ssr: false,
+      src: resolve(runtimeDir, 'plugin'),
     })
   }
 })

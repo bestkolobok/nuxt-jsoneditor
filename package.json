@@ -33,14 +33,14 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.4",
-    "vue3-ts-jsoneditor": "^1.0.5"
+    "@nuxt/kit": "^3.0.0-rc.6",
+    "vue3-ts-jsoneditor": "^2.3.2"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
-    "nuxt": "^3.0.0-rc.4"
+    "nuxt": "^3.0.0-rc.6"
   },
   "funding": [
     "https://uahelp.monobank.ua/",
@@ -53,5 +53,11 @@
     "https://www.unicef.org.uk/donate/donate-now-to-protect-children-in-ukraine/",
     "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=FYFZPVQN8J7YC&source=url",
     "https://novaukraine.org/"
+  ],
+  "keywords": [
+    "nuxt",
+    "nuxt3",
+    "jsoneditor",
+    "json editor"
   ]
 }

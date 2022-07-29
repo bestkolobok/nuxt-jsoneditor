@@ -7,6 +7,8 @@ export default defineNuxtConfig({
   ],
   jsoneditor: {
     componentName: 'VueJsonEditor',
-    includeCss: true
+    options: {
+      darkTheme: false,
+    }
   }
 })
