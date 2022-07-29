@@ -22,7 +22,7 @@
     "./dist/runtime/plugin.d.ts": "./dist/runtime/plugin.d.ts"
   },
   "main": "./dist/module.cjs",
-  "module": "/dist/module.mjs",
+  "module": "./dist/module.mjs",
   "types": "./dist/module.d.ts",
   "files": [
     "dist"
