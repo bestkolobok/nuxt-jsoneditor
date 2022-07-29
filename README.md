@@ -289,6 +289,9 @@ const state = reactive({
 
 <br>
 
+## ❗❗❗️️️ Important
+>If you have problems starting Nuxt after updating this package, try removing <code>**yarn.lock**</code> and <code>**node_modules**</code> folder, then reinstall dependencies <code>**yarn install**</code>. If that doesn't help, update the **Nuxt** and **@pinia/nuxt** packages
+
 
 ## 🔨 Development
 
