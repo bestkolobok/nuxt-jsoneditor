@@ -12,10 +12,18 @@
     ".": {
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
-    }
+    },
+    "./dist/module.mjs": "./dist/module.mjs",
+    "./dist/module.cjs": "./dist/module.cjs",
+    "./dist/module.json": "./dist/module.json",
+    "./dist/module.d.ts": "./dist/module.d.ts",
+    "./dist/types.d.ts": "./dist/types.d.ts",
+    "./dist/runtime/plugin.mjs": "./dist/runtime/plugin.mjs",
+    "./dist/runtime/plugin.d.ts": "./dist/runtime/plugin.d.ts"
   },
   "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
+  "module": "/dist/module.mjs",
+  "types": "./dist/module.d.ts",
   "files": [
     "dist"
   ],
@@ -40,7 +48,8 @@
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
-    "nuxt": "^3.0.0-rc.6"
+    "nuxt": "^3.0.0-rc.6",
+    "prettier": "^2.7.1"
   },
   "funding": [
     "https://uahelp.monobank.ua/",
