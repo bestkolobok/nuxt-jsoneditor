@@ -10,10 +10,12 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/module.mjs",
+      "import": {
+        "default": "./dist/module.mjs",
+        "types": "./dist/types.d.ts"
+      },
       "require": "./dist/module.cjs"
-    },
-    "./*": "./dist/*"
+    }
   },
   "main": "./dist/module.cjs",
   "module": "./dist/module.mjs",
