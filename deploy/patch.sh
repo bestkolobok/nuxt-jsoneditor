@@ -1,8 +1,5 @@
 #!/usr/bin/env sh
 
-# update package version
-npm version patch
-
 # final commit
 git add -A
 git commit -m 'deploy'
@@ -10,13 +7,16 @@ git commit -m 'deploy'
 # abort on errors
 set -e
 
-# build
-npm run prepack
+# update package version
+npm version patch
 
 # copy files to dist directory
 cp package.json dist
 cp LICENSE dist
 cp README.md dist
+
+# build
+npm run prepack
 
 # navigate into the build output directory
 cd dist
