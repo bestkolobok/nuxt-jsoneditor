@@ -7,11 +7,11 @@ git commit -m 'deploy'
 # abort on errors
 set -e
 
-# update package version
-npm version patch
-
 # build
 npm run prepack
+
+# update package version
+npm version patch
 
 # copy files to dist directory
 cp package.json dist
