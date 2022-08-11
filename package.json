@@ -13,7 +13,7 @@
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
     },
-    "./types": "./dist/types.d.ts"
+    "./types.d.ts": "./dist/types.d.ts"
   },
   "main": "./dist/module.cjs",
   "module": "./dist/module.mjs",
