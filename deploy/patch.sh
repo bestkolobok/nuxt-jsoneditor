@@ -17,21 +17,24 @@ npm run prepack
 cp package.json dist
 cp LICENSE dist
 cp README.md dist
+cp .npmignore dist
 
 # navigate into the build output directory
 cd dist
 
-git init
-git checkout -b develop
-git add -A
-git commit -m 'deploy'
+#git init
+#git checkout -b develop
+#git add -A
+#git commit -m 'deploy'
 
 # update package version
 #npm version patch
 
+npm pack
+
 # publish
 npm publish
 
-rm -rf .git
+#rm -rf .git
 
 cd -
