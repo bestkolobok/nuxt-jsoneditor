@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# update package version
+npm version patch
+
 # final commit
 git add -A
 git commit -m 'deploy'
@@ -15,9 +18,6 @@ cp package.json dist
 cp LICENSE dist
 cp README.md dist
 
-# update package version
-npm version patch
-
 # navigate into the build output directory
 cd dist
 
@@ -27,7 +27,7 @@ cd dist
 #git commit -m 'deploy'
 
 # update package version
-npm version patch
+#npm version patch
 
 # publish
 npm publish
