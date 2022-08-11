@@ -1,6 +1,6 @@
 import {resolve} from 'path';
 import {fileURLToPath} from 'url';
-import {defineNuxtModule, addPlugin} from '@nuxt/kit';
+import {defineNuxtModule, addPlugin, addComponent} from '@nuxt/kit';
 import type {Params} from 'vue3-ts-jsoneditor';
 
 export type {
@@ -45,7 +45,7 @@ export default defineNuxtModule<ModuleOptions>({
     componentName: 'JsonEditor',
     options: {},
   },
-  setup<T>(options: ModuleOptions, nuxt) {
+  async setup<T>(options: ModuleOptions, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url));
     nuxt.options.build.transpile.push(runtimeDir);
 
@@ -54,6 +54,11 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin({
       ssr: false,
       src: resolve(runtimeDir, 'plugin'),
+    });
+
+    await addComponent({
+      name: options.componentName,
+      filePath: 'vue3-ts-jsoneditor',
     });
   },
 });
