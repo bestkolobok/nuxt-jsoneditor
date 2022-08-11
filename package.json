@@ -13,7 +13,7 @@
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
     },
-    "./*": "./dist/*.*"
+    "./*": "./dist/*"
   },
   "main": "./dist/module.cjs",
   "module": "./dist/module.mjs",
