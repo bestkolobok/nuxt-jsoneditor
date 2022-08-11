@@ -21,10 +21,10 @@ npm version patch
 # navigate into the build output directory
 cd dist
 
-git init
-git checkout -b main
-git add -A
-git commit -m 'deploy'
+#git init
+#git checkout -b main
+#git add -A
+#git commit -m 'deploy'
 
 # update package version
 npm version patch
@@ -32,6 +32,6 @@ npm version patch
 # publish
 npm publish
 
-rm -rf .git
+#rm -rf .git
 
 cd -
