@@ -30,7 +30,7 @@ cd dist
 #npm version patch
 
 # publish
-npm publish
+#npm publish
 
 #rm -rf .git
 
