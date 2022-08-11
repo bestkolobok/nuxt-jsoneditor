@@ -10,13 +10,13 @@ set -e
 # build
 npm run prepack
 
-# update package version
-#npm version patch
-
 # copy files to dist directory
 cp package.json dist
 cp LICENSE dist
 cp README.md dist
+
+# update package version
+npm version patch
 
 # navigate into the build output directory
 cd dist
@@ -26,8 +26,11 @@ git checkout -b main
 git add -A
 git commit -m 'deploy'
 
+# update package version
+npm version patch
+
 # publish
-#npm publish
+npm publish
 
 rm -rf .git
 
