@@ -1,28 +1,22 @@
 {
   "name": "nuxt-jsoneditor",
-  "version": "1.2.4",
+  "version": "1.2.3",
   "author": {
     "name": "Alex Guzey",
     "email": "alex.guzey@gmail.com"
   },
   "private": false,
-  "license": "Apache-2.0",
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
-      "import": {
-        "default": "./dist/module.mjs",
-        "types": "./dist/types.d.ts"
-      },
-      "require": "./dist/module.cjs"
+      "import": "./module.mjs",
+      "require": "./module.cjs"
     }
   },
-  "main": "./dist/module.cjs",
-  "module": "./dist/module.mjs",
-  "types": "./dist/types.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "./module.cjs",
+  "module": "./module.mjs",
+  "types": "./types.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/bestkolobok/nuxt-jsoneditor.git"
@@ -34,7 +28,8 @@
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "deploy": "sh deploy/patch.sh"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.6",
