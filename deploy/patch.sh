@@ -10,13 +10,13 @@ set -e
 # update package version
 npm version patch
 
+# build
+npm run prepack
+
 # copy files to dist directory
 cp package.json dist
 cp LICENSE dist
 cp README.md dist
-
-# build
-npm run prepack
 
 # navigate into the build output directory
 cd dist
