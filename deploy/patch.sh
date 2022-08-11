@@ -11,7 +11,7 @@ set -e
 npm run prepack
 
 # update package version
-npm version patch
+#npm version patch
 
 # copy files to dist directory
 cp package.json dist
@@ -27,7 +27,7 @@ git add -A
 git commit -m 'deploy'
 
 # publish
-npm publish
+#npm publish
 
 rm -rf .git
 
