@@ -5515,10 +5515,10 @@ vue-router@^4.1.2:
   dependencies:
     "@vue/devtools-api" "^6.1.4"
 
-vue3-ts-jsoneditor@^2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/vue3-ts-jsoneditor/-/vue3-ts-jsoneditor-2.3.3.tgz#d6786e65227549bc71b47c47b3f5d9a15693b233"
-  integrity sha512-AOhJcbSJimuFjpwe7PGcOtLaGQ1OzTRZBsfcI01s3X89mJsL+0wgCu0pFiWxXnVVTkhSRiYaUVw07d8m9RFYvA==
+vue3-ts-jsoneditor@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/vue3-ts-jsoneditor/-/vue3-ts-jsoneditor-2.5.1.tgz#73b502318ded8f3418ede2e49e9831476cf014c9"
+  integrity sha512-KqDFQW2MebySyrEiP9baT2gnHhi7D0o9Jo3hruewO7a36akE8xVrMJyFUo9BvIuyRLKYRzctaKVJ3U0AdQdbFA==
   dependencies:
     vanilla-jsoneditor "^0.6.2"
     vue "^3.2.37"

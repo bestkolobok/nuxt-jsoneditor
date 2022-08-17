@@ -9,4 +9,7 @@ export default defineNuxtConfig({
       darkTheme: false,
     },
   },
+  build: {
+    // transpile: ['vue3-ts-jsoneditor'],
+  },
 });
