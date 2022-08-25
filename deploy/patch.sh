@@ -1,13 +1,13 @@
 #! /bin/bash
 
+echo $0
+
 # final commit
 git add -A
 git commit -m 'deploy'
 
 # abort on errors
 set -e
-
-echo $0
 
 # update package version
 npm version $0
