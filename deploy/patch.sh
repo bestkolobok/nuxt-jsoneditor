@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#! /bin/bash
 
 # final commit
 git add -A
