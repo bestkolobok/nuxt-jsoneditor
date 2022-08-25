@@ -1,8 +1,5 @@
 #! /bin/bash
 
-echo "!!!!! $0"
-echo "===== $1"
-
 git add -A
 git commit -m 'deploy'
 
@@ -10,7 +7,7 @@ git commit -m 'deploy'
 set -e
 
 # update package version
-npm version $0
+npm version "$1"
 
 # build
 npm run prepack:publish
