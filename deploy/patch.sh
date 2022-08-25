@@ -19,15 +19,15 @@ cp LICENSE dist
 cp README.md dist
 cp .npmignore dist
 
-npm publish dist
+#npm publish dist
 
 # navigate into the build output directory
-#cd dist
+cd dist
 
-#git init
-#git checkout -b develop
-#git add -A
-#git commit -m 'deploy'
+git init
+git checkout -b main
+git add -A
+git commit -m 'publish'
 
 # update package version
 #npm version patch
@@ -36,7 +36,8 @@ npm publish dist
 
 # publish
 #npm publish dist
+npm publish
 
-#rm -rf .git
+rm -rf .git
 
-#cd -
+cd -

@@ -6,21 +6,18 @@
     "email": "alex.guzey@gmail.com"
   },
   "private": false,
-  "license": "Apache-2.0",
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "import": "./module.mjs",
+      "require": "./module.cjs"
     },
-    "./types": "./dist/types.d.ts"
+    "./types": "./types.d.ts"
   },
-  "main": "./dist/module.cjs",
-  "module": "./dist/module.mjs",
-  "types": "./dist/types.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "./module.cjs",
+  "module": "./module.mjs",
+  "types": "./types.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/bestkolobok/nuxt-jsoneditor.git"
@@ -29,6 +26,7 @@
     "url": "https://github.com/bestkolobok/nuxt-jsoneditor/issues"
   },
   "scripts": {
+    "deploy": "sh deploy/patch.sh",
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
