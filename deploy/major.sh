@@ -8,7 +8,7 @@ git commit -m 'deploy'
 set -e
 
 # update package version
-npm version "$0"
+npm version major
 
 # build
 npm run prepack:publish

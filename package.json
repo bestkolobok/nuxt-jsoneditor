@@ -26,8 +26,10 @@
     "url": "https://github.com/bestkolobok/nuxt-jsoneditor/issues"
   },
   "scripts": {
-    "deploy": "sh deploy/patch.sh",
-    "prepack_": "nuxt-module-build",
+    "deploy": "sh deploy/patch.sh patch",
+    "deploy:minor": "sh deploy/patch.sh minor",
+    "deploy:major": "sh deploy/patch.sh major",
+    "prepack:publish": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
