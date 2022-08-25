@@ -13,7 +13,8 @@
       "import": "./module.mjs",
       "require": "./module.cjs"
     },
-    "./types": "./types.d.ts"
+    "./types": "./types.d.ts",
+    "./module": "./module.d.ts"
   },
   "main": "./module.cjs",
   "module": "./module.mjs",

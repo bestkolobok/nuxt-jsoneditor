@@ -254,8 +254,35 @@ const onExpand = () => {
 
 ### ⚡️ Types
 
-```javascript
-import types from "nuxt-jsoneditor/types"
+```ts
+import type JSONEditorOptions from "nuxt-jsoneditor/types";
+import type { 
+    Content, 
+    JSONContent, 
+    JSONData, 
+    JSONEditor, 
+    JSONNodeItem, 
+    JSONNodeProp, 
+    JSONPatchDocument, 
+    JSONPatchResult, 
+    MenuItem, 
+    Mode, 
+    OnClassName, 
+    OnRenderMenu, 
+    OnRenderValue, 
+    Path, 
+    QueryLanguage, 
+    QueryLanguageId, 
+    QueryLanguageOptions, 
+    RenderValueComponentDescription, 
+    RenderValueProps, 
+    RenderValuePropsOptional, 
+    SearchResultItem, 
+    TextContent, 
+    ValidationError, 
+    Validator, 
+    ValueNormalization 
+} from "nuxt-jsoneditor/module";
 ```
 
 <br>
