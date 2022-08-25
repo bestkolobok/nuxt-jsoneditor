@@ -252,6 +252,13 @@ const onExpand = () => {
 
 <br>
 
+### ⚡️ Types
+
+```javascript
+import types from "nuxt-jsoneditor/types"
+```
+
+<br>
 
 ### 🟥🟧🟨🟩🟦🟪️ Styling
 The editor can be styled using the available CSS variables. A full list with all variables can be found [here](https://github.com/josdejong/svelte-jsoneditor/blob/main/src/lib/themes/jse-theme-default.css)
