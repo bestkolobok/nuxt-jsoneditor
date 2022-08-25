@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo $0
+echo $1
 
 # final commit
 git add -A
