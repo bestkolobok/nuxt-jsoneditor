@@ -27,7 +27,7 @@
   },
   "scripts": {
     "deploy": "sh deploy/patch.sh",
-    "prepack": "nuxt-module-build",
+    "prepack_": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
