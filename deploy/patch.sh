@@ -36,7 +36,7 @@ git commit -m 'publish'
 
 # publish
 #npm publish dist
-npm publish
+#npm publish
 
 rm -rf .git
 
