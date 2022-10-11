@@ -9,7 +9,7 @@ export type {
   Content,
   Path,
   QueryLanguageId,
-  JSONData,
+  JSONValue,
   JSONPatchDocument,
   JSONPatchResult,
   ValidationError,
@@ -38,7 +38,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'json-editor',
     configKey: 'jsoneditor',
     compatibility: {
-      nuxt: '^3.0.0',
+      nuxt: '^3',
     },
   },
   defaults: {

@@ -1,19 +1,18 @@
 <template>
   <div class="module-playground">
-    <vue-json-editor height="400" v-model:json="state.json" />
+    <vue-json-editor height="400" v-model="jsonData" />
   </div>
 </template>
 
 <script setup lang="ts">
-const state = reactive({
-  json: {
-    array: [1, 2, 3],
-    boolean: true,
-    Null: null,
-    number: 123,
-    object: {a: 'b', c: 'd'},
-    string: 'Hello World',
-  },
+const jsonData = ref({
+  array: [1, 2, 3],
+  boolean: true,
+  Null: null,
+  number: 123,
+  seconds: 0,
+  object: {a: 'b', c: 'd'},
+  string: 'Hello World',
 });
 </script>
 

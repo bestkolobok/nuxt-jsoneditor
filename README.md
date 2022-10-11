@@ -8,7 +8,7 @@
 ## 🇺🇦🇺🇦🇺🇦 [Stand With Ukraine](https://www.standwithukraine.how/) 🇺🇦🇺🇦🇺🇦
 
 # nuxt-jsoneditor
-#### Based on [vanilla-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor)
+#### Powered by [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor)
 
 ## 🕹 Demo
 
@@ -80,7 +80,7 @@ type Mode = "text" | "tree";
 
 type QueryLanguageId = 'javascript' | 'lodash' | 'jmespath';
 ```
-Read more in [vanilla-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor) properties
+Read more in [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor) properties
 <br>
 
 ### 👉 Use in template
@@ -91,7 +91,7 @@ Read more in [vanilla-jsoneditor](https://www.npmjs.com/package/svelte-jsonedito
     height="400"
     :mode="mode"
     :queryLanguagesIds="queryLanguages"
-    v-model:json="state.json"
+    v-model="jsonData"
     @error="onError"
     @focus="onFocus"
     @blur="onBlur"
@@ -104,32 +104,24 @@ Read more in [vanilla-jsoneditor](https://www.npmjs.com/package/svelte-jsonedito
   <vue-jsoneditor
     height="400"
     :mode="mode"
-    v-model:jsonString="state.jsonString"
+    v-model="jsonText"
   />
 </template>
 
 <script setup lang="ts">
 import type {QueryLanguageId} from 'nuxt-jsoneditor'
 
-const state = reactive({
-  json: {
-    array: [1, 2, 3],
-    boolean: true,
-    Null: null,
-    number: 123,
-    object: {a: 'b', c: 'd'},
-    string: 'Hello World',
-  },
-
-  jsonString: JSON.stringify({
-    array: [1, 2, 3],
-    boolean: true,
-    Null: null,
-    number: 123,
-    object: {a: 'b', c: 'd'},
-    string: 'Hello World',
-  })
+const jsonData = ref({
+  array: [1, 2, 3],
+  boolean: true,
+  Null: null,
+  number: 123,
+  seconds: 0,
+  object: {a: 'b', c: 'd'},
+  string: 'Hello World',
 });
+
+const jsonText = ref('{"array": [1, 2, 3]}');
 
 const mode = ref('tree');
 
@@ -160,8 +152,8 @@ const onBlur = () => {
 ### ☑️ Props
 | Name                      | Description                                                                                                                                                                                                                                       | type                                                                                                  | default               |
 | :----------------------   | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                           | :------------:                                                                                        | :-----------------:   |
-| json (v-model)            | Object value                                                                                                                                                                                                                                      | <code>object</code>                                                                                   | { }                   |
-| jsonString (v-model)      | String value                                                                                                                                                                                                                                      | <code>string</code>                                                                                   | undefined             |
+| modelValue (v-model)      | Json or string value                                                                                                                                                                                                                              | <code>object &vert; string</code>                                                                     | undefined             |
+| value                     | Same as modelValue                                                                                                                                                                                                                                | <code>object &vert; string</code>                                                                     | undefined             |
 | mode                      | Open the editor in 'tree' mode or 'text' mode (formerly: code mode).                                                                                                                                                                              | <code>string</code>                                                                                   | 'tree'                |
 | mainMenuBar               | Show the main menu bar. Default value is true.                                                                                                                                                                                                    | <code>boolean</code>                                                                                  | true                  |
 | navigationBar             | Show the navigation bar with, where you can see the selected path and navigate through your document from there.                                                                                                                                  | <code>boolean</code>                                                                                  | true                  |
@@ -219,7 +211,7 @@ const onBlur = () => {
   <vue-jsoneditor
     height="400"
     ref="editor"
-    v-model:json="state.json"
+    v-model="jsonData"
   />
 
   <div>
@@ -230,15 +222,14 @@ const onBlur = () => {
 </template>
 
 <script setup lang="ts">
-const state = reactive({
-  json: {
-    array: [1, 2, 3],
-    boolean: true,
-    Null: null,
-    number: 123,
-    object: {a: 'b', c: 'd'},
-    string: 'Hello World',
-  }
+const jsonData = ref({
+  array: [1, 2, 3],
+  boolean: true,
+  Null: null,
+  number: 123,
+  seconds: 0,
+  object: {a: 'b', c: 'd'},
+  string: 'Hello World',
 });
 
 const editor = ref();
@@ -261,8 +252,8 @@ const onExpand = () => {
 import type JSONEditorOptions from "nuxt-jsoneditor/types";
 import type { 
     Content, 
-    JSONContent, 
-    JSONData, 
+    JSONContent,
+    JSONValue, 
     JSONEditor, 
     JSONNodeItem, 
     JSONNodeProp, 
@@ -297,20 +288,19 @@ The editor can be styled using the available CSS variables. A full list with all
   <vue-jsoneditor
     class="awesome-json-editor"
     height="400"
-    v-model:json="state.json"
+    v-model="jsonData"
   />
 </template>
 
 <script setup lang="ts">
-const state = reactive({
-  json: {
-    array: [1, 2, 3],
-    boolean: true,
-    Null: null,
-    number: 123,
-    object: {a: 'b', c: 'd'},
-    string: 'Hello World',
-  }
+const jsonData = ref({
+  array: [1, 2, 3],
+  boolean: true,
+  Null: null,
+  number: 123,
+  seconds: 0,
+  object: {a: 'b', c: 'd'},
+  string: 'Hello World',
 });
 
 </script>
@@ -453,7 +443,7 @@ const state = reactive({
 <br>
 
 ## ❗❗❗️️️ Important
->If you have problems starting Nuxt after updating this package, try removing <code>**yarn.lock**</code> and <code>**node_modules**</code> folder, then reinstall dependencies <code>**yarn install**</code>. If that doesn't help, update the **Nuxt** and **@pinia/nuxt** packages
+>If you have problems starting Nuxt after updating this package, try removing <code>**yarn.lock**</code> and <code>**node_modules**</code> folder, then reinstall dependencies <code>**yarn install**</code>.
 
 
 ## 🔨 Development
