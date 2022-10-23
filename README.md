@@ -86,24 +86,45 @@ Read more in [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor
 ### 👉 Use in template
 
 ```vue
+// You can use the "v-model:json" and pass json value
 <template>
   <vue-jsoneditor
     height="400"
-    :mode="mode"
+    mode="tree"
     :queryLanguagesIds="queryLanguages"
-    v-model="jsonData"
+    v-model:json="jsonData"
     @error="onError"
     @focus="onFocus"
     @blur="onBlur"
   />
 </template>
 
-// or
+// or you can use the "v-model:text" and pass json string
 
 <template>
   <vue-jsoneditor
     height="400"
-    :mode="mode"
+    mode="text"
+    v-model:text="jsonText"
+  />
+</template>
+
+// or you can use the "v-model" and pass json value. "mode" should be "tree"!!!
+
+<template>
+  <vue-jsoneditor
+    height="400"
+    mode="tree"
+    v-model="jsonData"
+  />
+</template>
+
+// or you can use the "v-model" and pass json string. "mode" should be "text"!!!
+
+<template>
+  <vue-jsoneditor
+    height="400"
+    mode="text"
     v-model="jsonText"
   />
 </template>
@@ -140,6 +161,18 @@ const onBlur = () => {
 }
 </script>
 ```
+
+### ❗️❗️❗️ Important
+
+> If you want use v-model (not v-model:json or v-model:text) then the type of data depends on the mode of the editor.
+> If mode="tree", then the data type in the model is JSON value, if mode="text",
+> then the data type is JSON string.
+> Please be aware that in text mode v-model can contain invalid JSON: whilst typing in text mode,
+> a JSON document will be temporarily invalid, like when the user is typing a new string.
+>
+> It is more clear to use v-model:json for tree mode and v-model:text for text mode.
+ 
+
 <br>
 
 ### ☑️ Slots
@@ -152,8 +185,10 @@ const onBlur = () => {
 ### ☑️ Props
 | Name                      | Description                                                                                                                                                                                                                                       | type                                                                                                  | default               |
 | :----------------------   | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                           | :------------:                                                                                        | :-----------------:   |
-| modelValue (v-model)      | Json or string value                                                                                                                                                                                                                              | <code>object &vert; string</code>                                                                     | undefined             |
-| value                     | Same as modelValue                                                                                                                                                                                                                                | <code>object &vert; string</code>                                                                     | undefined             |
+| json (v-model)            | JSON value                                                                                                                                                                                                                                        | <code>object &vert; array &vert; true &vert; false &vert; null &vert; number &vert; string</code>     | undefined             |
+| text (v-model)            | JSON string                                                                                                                                                                                                                                       | <code>string</code>                                                                                   | undefined             |
+| modelValue (v-model)      | JSON value or JSON string                                                                                                                                                                                                                         | <code>object &vert; array &vert; true &vert; false &vert; null &vert; number &vert; string</code>     | undefined             |
+| value                     | Same as modelValue                                                                                                                                                                                                                                | <code>object &vert; array &vert; true &vert; false &vert; null &vert; number &vert; string</code>     | undefined             |
 | mode                      | Open the editor in 'tree' mode or 'text' mode (formerly: code mode).                                                                                                                                                                              | <code>string</code>                                                                                   | 'tree'                |
 | mainMenuBar               | Show the main menu bar. Default value is true.                                                                                                                                                                                                    | <code>boolean</code>                                                                                  | true                  |
 | navigationBar             | Show the navigation bar with, where you can see the selected path and navigate through your document from there.                                                                                                                                  | <code>boolean</code>                                                                                  | true                  |
