@@ -431,7 +431,7 @@
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.0.tgz#c7bd7e9a516514e612d5d2e511ffc399e0eac322"
   integrity sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==
 
-"@nuxt/kit@3.0.0-rc.12", "@nuxt/kit@^3.0.0-rc.11":
+"@nuxt/kit@3.0.0-rc.12", "@nuxt/kit@^3.0.0-rc.11", "@nuxt/kit@^3.0.0-rc.12":
   version "3.0.0-rc.12"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.0.0-rc.12.tgz#637ab3e63d4213b886ab3cda19632bd08bc5ccb6"
   integrity sha512-d/6SeNVL1OPdru5aKjjUIWIwqIjbYN/VYGCrZs5gddkzJ5202DsMxyn2rs/ZyT8+oBbbVTYcCK6M+G0945mQdA==
@@ -3939,7 +3939,7 @@ nuxi@3.0.0-rc.12:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt@^3.0.0-rc.11:
+nuxt@^3.0.0-rc.12:
   version "3.0.0-rc.12"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-3.0.0-rc.12.tgz#09e79dbc681930286e838281cd1017540a84a470"
   integrity sha512-VhSod1u/w+C3VWsagTd5Prnsjk/VxPRt/bbADhUz3l0zxxajHRhHFX4xZSJWNgzsakducDqhn7N1pY6Ukko9kg==
@@ -5620,10 +5620,10 @@ vue-router@^4.1.5:
   dependencies:
     "@vue/devtools-api" "^6.1.4"
 
-vue3-ts-jsoneditor@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/vue3-ts-jsoneditor/-/vue3-ts-jsoneditor-2.7.0.tgz#fdf034ee57375a84f6148d56a2300fe93c42cd50"
-  integrity sha512-/8oXSd70FZYWtrhoQplAaS/6CKOodLEmoknefxcoZn64+PvGk33+PRSzVJ7AZ4Xw7IoB83eCJmEjOh4RsTASNA==
+vue3-ts-jsoneditor@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/vue3-ts-jsoneditor/-/vue3-ts-jsoneditor-2.7.1.tgz#cd9914caf023d1375cbbc20847c38a899d13acab"
+  integrity sha512-u8dWSG21dK0+iwbY6yhpcyRstQEKbO53+4Ma4Qhf9ED/wbGURjLvX/GTMbVsU7xB4gJKEs1a01AxBIgIab+4uA==
   dependencies:
     vanilla-jsoneditor "^0.7.9"
     vue "^3.2.37"
