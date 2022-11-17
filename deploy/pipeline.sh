@@ -6,11 +6,11 @@ git commit -m 'deploy'
 # abort on errors
 set -e
 
-# update package version
-npm version "$1"
-
 # build
 npm run prepack:publish
+
+# update package version
+npm version "$1"
 
 # copy files to dist directory
 cp package.json dist
