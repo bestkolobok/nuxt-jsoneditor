@@ -4,7 +4,7 @@ git add -A
 git commit -m 'deploy'
 
 # abort on errors
-set -e
+#set -e
 
 # build
 npm run prepack:publish

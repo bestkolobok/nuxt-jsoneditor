@@ -5,6 +5,8 @@ import type {Nuxt} from '@nuxt/schema';
 import type {Params} from 'vue3-ts-jsoneditor';
 
 export type {
+  ContentErrors,
+  Params,
   TextContent,
   JSONContent,
   Content,
@@ -24,12 +26,15 @@ export type {
   OnClassName,
   OnRenderValue,
   OnRenderMenu,
+  OnChangeStatus,
   Validator,
   Mode,
   MenuItem,
   JSONEditor,
   JSONNodeItem,
   JSONNodeProp,
+  JSONPathParser,
+  JSONParser
 } from 'vue3-ts-jsoneditor';
 
 export interface ModuleOptions extends Params {}
