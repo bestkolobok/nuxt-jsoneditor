@@ -11,7 +11,8 @@
   "exports": {
     ".": {
       "import": "./module.mjs",
-      "require": "./module.cjs"
+      "require": "./module.cjs",
+      "types": "./types.d.ts"
     },
     "./types": "./types.d.ts",
     "./module": "./module.d.ts"
@@ -36,15 +37,15 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.4.3",
-    "vue3-ts-jsoneditor": "^2.9.0"
+    "@nuxt/kit": "^3.10.3",
+    "vue3-ts-jsoneditor": "^2.11.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@types/node": "^20.1.4",
     "eslint": "^8.25.0",
-    "nuxt": "^3.4.3",
+    "nuxt": "^3.10.3",
     "prettier": "^2.7.1"
   },
   "funding": [
