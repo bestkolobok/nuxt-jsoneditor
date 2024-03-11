@@ -1,6 +1,6 @@
 {
   "name": "nuxt-jsoneditor",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "author": {
     "name": "Alex Guzey",
     "email": "alex.guzey@gmail.com"
@@ -10,16 +10,17 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./module.mjs",
-      "require": "./module.cjs",
-      "types": "./types.d.ts"
-    },
-    "./types": "./types.d.ts",
-    "./module": "./module.d.ts"
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
   },
-  "main": "./module.cjs",
-  "module": "./module.mjs",
-  "types": "./types.d.ts",
+  "main": "./dist/module.cjs",
+  "module": "./dist/module.mjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/bestkolobok/nuxt-jsoneditor.git"
@@ -31,7 +32,8 @@
     "deploy": "sh deploy/pipeline.sh patch",
     "deploy:minor": "sh deploy/pipeline.sh minor",
     "deploy:major": "sh deploy/pipeline.sh major",
-    "prepack:publish": "nuxt-module-build build",
+    "prepack": "nuxt-module-build build",
+    "release": "npm run lint && npm run prepack && npm publish && git push --follow-tags",
     "dev": "nuxi dev playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "dev:build": "nuxi build playground",
