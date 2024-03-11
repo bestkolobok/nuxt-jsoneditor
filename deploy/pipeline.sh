@@ -4,13 +4,16 @@ git add -A
 git commit -m 'deploy'
 
 # abort on errors
-#set -e
+set -e
 
-# build
-npm run prepack:publish
+# lint
+npm run lint
 
 # update package version
 npm version "$1"
+
+# build
+npm run prepack:publish
 
 # copy files to dist directory
 cp package.json dist

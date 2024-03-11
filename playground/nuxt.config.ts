@@ -1,7 +1,5 @@
-import JsonEditor from '../src/module';
-
 export default defineNuxtConfig({
-  modules: [JsonEditor],
+  modules: ['../src/module'],
   jsoneditor: {
     componentName: 'VueJsonEditor',
     options: {

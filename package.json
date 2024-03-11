@@ -31,10 +31,11 @@
     "deploy": "sh deploy/pipeline.sh patch",
     "deploy:minor": "sh deploy/pipeline.sh minor",
     "deploy:major": "sh deploy/pipeline.sh major",
-    "prepack:publish": "nuxt-module-build",
+    "prepack:publish": "nuxt-module-build build",
     "dev": "nuxi dev playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix"
   },
   "dependencies": {
     "@nuxt/kit": "^3.10.3",
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
+    "@nuxt/schema": "^3.10.3",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@types/node": "^20.1.4",
     "eslint": "^8.25.0",
