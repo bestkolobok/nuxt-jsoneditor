@@ -1,6 +1,6 @@
 <template>
   <div class="module-playground">
-    <vue-json-editor height="400" mode="tree" v-model:json="jsonData" />
+    <json-editor height="400" mode="tree" v-model:json="jsonData" />
   </div>
 </template>
 

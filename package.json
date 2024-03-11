@@ -1,6 +1,6 @@
 {
   "name": "nuxt-jsoneditor",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "author": {
     "name": "Alex Guzey",
     "email": "alex.guzey@gmail.com"
@@ -44,13 +44,15 @@
     "vue3-ts-jsoneditor": "^2.11.0"
   },
   "devDependencies": {
+    "@nuxt/eslint-config": "^0.2.0",
     "@nuxt/module-builder": "latest",
     "@nuxt/schema": "^3.10.3",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
-    "@types/node": "^20.1.4",
+    "@types/node": "^20.11.25",
     "eslint": "^8.25.0",
     "nuxt": "^3.10.3",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "typescript": "5.3.3"
   },
   "funding": [
     "https://uahelp.monobank.ua/",
