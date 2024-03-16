@@ -17,8 +17,8 @@
 ## ❗️️️ Compatibility with nuxt versions
 
 - Nuxt 3 - full support
-- Nuxt bridge - not tested
-- Nuxt 2 - currently not support
+- Nuxt bridge - not support
+- Nuxt 2 - not support
 <br>
 
 ## ☑️ Installation
@@ -33,8 +33,6 @@ npm install nuxt-jsoneditor
 ### 👉 Add module
 
 ```javascript
-import { defineNuxtConfig } from 'nuxt';
-
 export default defineNuxtConfig({
   modules: [
     'nuxt-jsoneditor'
@@ -93,7 +91,7 @@ Read more in [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor
 ```vue
 // You can use the "v-model:json" and pass json value
 <template>
-  <vue-jsoneditor
+  <json-editor
     height="400"
     mode="tree"
     :queryLanguagesIds="queryLanguages"
@@ -107,7 +105,7 @@ Read more in [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor
 // or you can use the "v-model:text" and pass json string
 
 <template>
-  <vue-jsoneditor
+  <json-editor
     height="400"
     mode="text"
     v-model:text="jsonText"
@@ -115,9 +113,10 @@ Read more in [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor
 </template>
 
 // or you can use the "v-model" and pass json value. "mode" should be "tree"!!!
+// (use "v-model" is not recommended. It is better to use "v-model:json")
 
 <template>
-  <vue-jsoneditor
+  <json-editor
     height="400"
     mode="tree"
     v-model="jsonData"
@@ -125,9 +124,10 @@ Read more in [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor
 </template>
 
 // or you can use the "v-model" and pass json string. "mode" should be "text"!!!
+// (use "v-model" is not recommended. It is better to use "v-model:text")
 
 <template>
-  <vue-jsoneditor
+  <json-editor
     height="400"
     mode="text"
     v-model="jsonText"
@@ -251,7 +251,7 @@ const onBlur = () => {
 
 ```vue
 <template>
-  <vue-jsoneditor
+  <json-editor
     height="400"
     ref="editor"
     v-model:json="jsonData"
@@ -333,10 +333,10 @@ import type {
 The editor can be styled using the available CSS variables. A full list with all variables can be found [here](https://github.com/josdejong/svelte-jsoneditor/blob/main/src/lib/themes/defaults.scss)
 ```vue
 <template>
-  <vue-jsoneditor
+  <json-editor
     class="awesome-json-editor"
     height="400"
-    v-model="jsonData"
+    v-model:json="jsonData"
   />
 </template>
 
