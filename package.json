@@ -36,7 +36,7 @@
     "dev": "nuxi dev playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "dev:build": "nuxi build playground",
-    "prepack": "nuxt-module-build build",
+    "prepack": "nuxt-module-build prepare && nuxt-module-build build",
     "pack": "npm pack",
     "lint": "eslint . --fix",
     "semantic-release": "semantic-release",
