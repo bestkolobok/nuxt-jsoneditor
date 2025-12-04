@@ -5,21 +5,31 @@
 [![npm](https://img.shields.io/github/stars/bestkolobok/nuxt-jsoneditor?style=social)](https://github.com/bestkolobok/nuxt-jsoneditor)
 
 
-## 🇺🇦🇺🇦🇺🇦 [Stand With Ukraine](https://www.standwithukraine.how/) 🇺🇦🇺🇦🇺🇦
+## 🇺🇦🇺🇦🇺🇦 [Stand With Ukraine](https://u24.gov.ua/) 🇺🇦🇺🇦🇺🇦
 
 # nuxt-jsoneditor
-#### Powered by [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor)
+#### Powered by [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor) and [vue3-ts-jsoneditor](https://www.npmjs.com/package/vue3-ts-jsoneditor)
 
 ## 🕹 Demo
 
 > you can 👀 a live demo [here](https://bestkolobok.github.io/vue3-jsoneditor/)
 
+## 🚀 Advantages
+
+- Full width button for maximizing editor
+- Automatic dynamic import of query languages
+- Automatic dynamic import of dark theme
+- **NEW**: Expand/Collapse functionality in Text Mode
+- **NEW**: Enhanced query language support with 5 languages (including jsonquery v5 and jsonpath)
+- **NEW**: Table mode support
+
 ## ❗️️️ Compatibility with nuxt versions
 
-- Nuxt 3 - full support
-- Nuxt bridge - not support
-- Nuxt 2 - not support
-<br>
+- Nuxt 4 – full support
+- Nuxt 3 – full support
+- Nuxt bridge – not support
+- Nuxt 2 – not support
+  <br>
 
 ## ☑️ Installation
 
@@ -51,6 +61,8 @@ export default defineNuxtConfig({
 })
 ```
 
+> **Note**: The component is registered as **ClientOnly** automatically. You don't need to wrap it in `<ClientOnly>` yourself, but be aware it will not render during SSR.
+
 ### 🌎 Global options
 ```typescript
 interface JSONEditorOptions {
@@ -79,9 +91,9 @@ interface JSONEditorOptions {
   darkTheme?: boolean;
 }
 
-type Mode = "text" | "tree";
+type Mode = "text" | "tree" | "table";
 
-type QueryLanguageId = 'javascript' | 'lodash' | 'jmespath';
+type QueryLanguageId = 'javascript' | 'lodash' | 'jmespath' | 'jsonquery' | 'jsonpath';
 ```
 Read more in [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor) properties
 <br>
@@ -134,6 +146,15 @@ Read more in [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor
   />
 </template>
 
+// Table mode example
+<template>
+  <json-editor
+    height="400"
+    mode="table"
+    v-model:json="jsonData"
+  />
+</template>
+
 <script setup lang="ts">
 import type {QueryLanguageId} from 'nuxt-jsoneditor'
 
@@ -151,7 +172,7 @@ const jsonText = ref('{"array": [1, 2, 3]}');
 
 const mode = ref('tree');
 
-const queryLanguages = ref<QueryLanguageId[]>(['javascript', 'lodash', 'jmespath']);
+const queryLanguages = ref<QueryLanguageId[]>(['javascript', 'lodash', 'jmespath', 'jsonquery', 'jsonpath']);
 
 const onError = (error) => {
   //
@@ -170,13 +191,13 @@ const onBlur = () => {
 ### ❗️❗️❗️ Important
 
 > If you want use v-model (not v-model:json or v-model:text) then the type of data depends on the mode of the editor.
-> If mode="tree", then the data type in the model is JSON value, if mode="text",
+> If mode="tree" or mode="table", then the data type in the model is JSON value, if mode="text",
 > then the data type is JSON string.
 > Please be aware that in text mode v-model can contain invalid JSON: whilst typing in text mode,
 > a JSON document will be temporarily invalid, like when the user is typing a new string.
 >
-> It is more clear to use v-model:json for tree mode and v-model:text for text mode.
- 
+> It is more clear to use v-model:json for tree/table mode and v-model:text for text mode.
+
 
 <br>
 
@@ -203,8 +224,8 @@ const onBlur = () => {
 | parser                  | Configure a custom JSON parser, like lossless-json. By default, the native JSON parser of JavaScript is used. The JSON interface is an object with a parse and stringify function                                                                                                                                                                                                                                                                                 |                                                             <code>JSONParser</code>                                                             |  undefined   |
 | validationParser        | Only applicable when a validator is provided. This is the same as parser, except that this parser is used to parse the data before sending it to the validator. Configure a custom JSON parser that is used to parse JSON before passing it to the validator. By default, the built-in JSON parser is used. When passing a custom validationParser, make sure the output of the parser is supported by the configured validator.                                  |                                                             <code>JSONParser</code>                                                             |  undefined   |
 | pathParser              | An optional object with a parse and stringify method to parse and stringify a JSONPath, which is an array with property names. The pathParser is used in the path editor in the navigation bar, which is opened by clicking the edit button on the right side of the navigation bar. The pathParser.parse function is allowed to throw an Error when the input is invalid. By default, a JSON Path notation is used, which looks like $.data[2].nested.property.  |                                                           <code>JSONPathParser</code>                                                           |  undefined   |
-| queryLanguagesIds       | Configure one or multiple query language that can be used in the Transform modal. The library comes with three languages: <code>javascript</code>, <code>lodash</code> or <code>jmespath</code>                                                                                                                                                                                                                                                                   |                                                          <code>QueryLanguage[]</code>                                                           | [javascript] |
-| queryLanguageId         | The id of the currently selected query language <code>javascript</code>, <code>lodash</code> or <code>jmespath</code>                                                                                                                                                                                                                                                                                                                                             |                                                               <code>string</code>                                                               |              |
+| queryLanguagesIds       | Configure one or multiple query language that can be used in the Transform modal. The library comes with five languages: <code>javascript</code>, <code>lodash</code>, <code>jmespath</code>, <code>jsonquery</code>, and <code>jsonpath</code>                                                                                                                                                                                                                   |                                                          <code>QueryLanguage[]</code>                                                           | [javascript] |
+| queryLanguageId         | The id of the currently selected query language: <code>javascript</code>, <code>lodash</code>, <code>jmespath</code>, <code>jsonquery</code>, or <code>jsonpath</code>                                                                                                                                                                                                                                                                                           |                                                               <code>string</code>                                                               |              |
 | onClassName             | Add a custom class name to specific nodes, based on their path and/or value.                                                                                                                                                                                                                                                                                                                                                                                      |                                     <code>function (path: Path, value: any): string &vert; undefined</code>                                     |              |
 | onRenderValue           | Details in [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor)                                                                                                                                                                                                                                                                                                                                                                                   |                               <code>function (props: RenderValueProps) : RenderValueComponentDescription[]</code>                               |              |
 | onRenderMenu            | Details in [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor)                                                                                                                                                                                                                                                                                                                                                                                   | <code>function (items: MenuItem[], context: { mode: 'tree' &vert; 'text' &vert; 'table', modal: boolean }) : MenuItem[] &vert; undefined</code> |              |
@@ -229,8 +250,8 @@ const onBlur = () => {
 <br>
 
 ### ☑️ Use expose functions
-- <b>$collapseAll</b> - collapse all nodes
-- <b>$expandAll</b> - expand all nodes
+- <b>$collapseAll</b> - collapse all nodes (works in both tree and text mode)
+- <b>$expandAll</b> - expand all nodes (works in both tree and text mode)
 - <b>$expand</b> - Expand or collapse paths in the editor. [See more](https://www.npmjs.com/package/svelte-jsoneditor) about <code>expand()</code>
 - <b>$get</b> - Get the current JSON document. [See more](https://www.npmjs.com/package/svelte-jsoneditor) about <code>get()</code>
 - <b>$set</b> - Replace the current content. Will reset the state of the editor. See also method <code>update()</code>. [See more](https://www.npmjs.com/package/svelte-jsoneditor) about <code>set()</code>
@@ -292,8 +313,8 @@ const onExpand = () => {
 ### ⚡️ Types
 
 ```ts
-import type JSONEditorOptions from "nuxt-jsoneditor/types";
 import type {
+  JSONEditorOptions,
   ContentErrors,
   Params,
   TextContent,
@@ -319,13 +340,32 @@ import type {
   Validator,
   Mode,
   MenuItem,
-  JSONEditor,
-  JSONNodeItem,
-  JSONNodeProp,
   JSONPathParser,
   JSONParser
-} from "nuxt-jsoneditor/module";
+} from "nuxt-jsoneditor";
 ```
+
+<br>
+
+## 🆕 What's New in Latest Version
+
+### Text Mode Enhancements
+- **Expand/Collapse in Text Mode**: You can now expand and collapse JSON sections directly in text mode, making it easier to work with large JSON documents
+- **Expand All / Collapse All buttons**: New menu buttons in text mode for quick navigation
+- **Recursive Collapse**: Support for collapsing nested structures recursively
+
+### Enhanced Query Language Support
+- **Five Query Languages**: Full support for `javascript`, `lodash`, `jmespath`, `jsonquery` (v5), and `jsonpath`
+- **JSONQuery v5**: Updated to the latest version of @jsonquerylang/jsonquery with improved performance and features
+
+### Table Mode
+- Full support for table mode alongside tree and text modes
+- View JSON data in a tabular format for better visualization of arrays and objects
+
+### Performance & Bug Fixes
+- Improved performance when renaming object keys
+- Better handling of context menu with updated selections
+- Enhanced paste functionality with multiline text
 
 <br>
 
@@ -494,4 +534,3 @@ const jsonData = ref({
 
 - Run `npm run dev:prepare` to generate type stubs.
 - Use `npm run dev` to start [playground](playground) in development mode.
-

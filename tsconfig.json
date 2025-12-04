@@ -3,5 +3,10 @@
   "compilerOptions": {
     "module": "nodenext",
     "moduleResolution": "nodenext"
-  }
+  },
+  "exclude": [
+    "dist",
+    "node_modules",
+    "playground",
+  ]
 }

@@ -27,7 +27,6 @@ coverage
 .vscode
 
 # Intellij idea
-*.iml
 .idea
 
 # OSX
@@ -44,10 +43,14 @@ tsconfig.json
 .npmignore
 .gitignore
 .prettierrc
-.eslintrc
-.eslintignore
 .editorconfig
 deploy/
 playground/
 src/
 build.config.ts
+*.tgz
+
+.commitlintrc.json
+eslint.config.ts
+.husky/
+.github/

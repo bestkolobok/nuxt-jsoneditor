@@ -1,6 +1,6 @@
 <template>
   <div class="module-playground">
-    <json-editor height="400" mode="tree" v-model:json="jsonData" />
+    <json-editor v-model:json="jsonData" height="400" mode="tree" />
   </div>
 </template>
 
