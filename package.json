@@ -38,9 +38,13 @@
     "dev:build": "nuxi build playground",
     "prepack": "nuxt-module-build prepare && nuxt-module-build build",
     "pack": "npm pack",
-    "lint": "eslint . --fix",
+    "lint": "eslint",
+    "lint:fix": "eslint . --fix",
     "semantic-release": "semantic-release",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
     "@nuxt/kit": "^4.2.1",
@@ -54,6 +58,7 @@
     "@nuxt/eslint-config": "^0.7.6",
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.2.1",
+    "@nuxt/test-utils": "^3.21.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",
@@ -65,11 +70,13 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^9.33.0",
     "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "nuxt": "^4.2.1",
     "prettier": "^2.7.1",
     "semantic-release": "^25.0.2",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.48.1",
+    "vitest": "^4.0.15",
     "vue-tsc": "^3.1.5"
   },
   "funding": [
@@ -82,5 +89,11 @@
     "nuxt4",
     "jsoneditor",
     "json editor"
-  ]
+  ],
+  "lint-staged": {
+    "*.{ts,tsx,vue}": [
+      "eslint --fix",
+      "vitest related --run"
+    ]
+  }
 }
