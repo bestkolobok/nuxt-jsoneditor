@@ -1,6 +1,7 @@
 [![npm version](https://badge.fury.io/js/nuxt-jsoneditor.svg)](https://badge.fury.io/js/nuxt-jsoneditor)
 ![NPM](https://img.shields.io/npm/l/nuxt-jsoneditor)
 ![npm](https://img.shields.io/npm/dm/nuxt-jsoneditor)
+[![npm](https://github.com/bestkolobok/nuxt-jsoneditor/actions/workflows/test.yml/badge.svg)](https://github.com/bestkolobok/nuxt-jsoneditor/actions/workflows/test.yml)
 [![npm](https://img.shields.io/badge/release-semantic-e10079?logo=semantic-release)](https://semantic-release.gitbook.io)
 <br>
 [![npm](https://img.shields.io/github/stars/bestkolobok/nuxt-jsoneditor?style=social)](https://github.com/bestkolobok/nuxt-jsoneditor)

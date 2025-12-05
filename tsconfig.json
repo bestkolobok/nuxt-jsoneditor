@@ -1,8 +1,7 @@
 {
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "module": "nodenext",
-    "moduleResolution": "nodenext"
+    "module": "nodenext"
   },
   "exclude": [
     "dist",
