@@ -32,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Prepare module
+        run: pnpm dev:prepare
+
       - name: Run tests
         run: pnpm test
 
