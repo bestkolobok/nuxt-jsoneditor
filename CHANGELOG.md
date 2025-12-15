@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/bestkolobok/nuxt-jsoneditor/compare/v2.0.1...v2.1.0) (2025-12-15)
+
+
+### Features
+
+* update vue3-ts-jsoneditor to latest version ([88b5bba](https://github.com/bestkolobok/nuxt-jsoneditor/commit/88b5bbae42af06b97a012a5b907c8976739cc839))
+
 ## [2.0.1](https://github.com/bestkolobok/nuxt-jsoneditor/compare/v2.0.0...v2.0.1) (2025-12-05)
 
 
