@@ -7,14 +7,11 @@ node_modules
 # Temp directories
 .temp
 .tmp
-.cache
 
 # Nuxt
 .nuxt
-.output
 .vercel_build_output
 .build-*
-.env
 .netlify
 
 # Testing
@@ -54,3 +51,5 @@ build.config.ts
 eslint.config.ts
 .husky/
 .github/
+
+logo.png
