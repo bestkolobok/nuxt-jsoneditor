@@ -4,6 +4,7 @@
   "printWidth": 120,
   "bracketSpacing": false,
   "semi": true,
+  "trailingComma": "es5",
   "vueIndentScriptAndStyle": false,
   "endOfLine": "auto"
 }
