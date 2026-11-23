@@ -47,8 +47,8 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.2.1",
-    "defu": "^6.1.4",
+    "@nuxt/kit": "^4.6.4",
+    "defu": "^6.1.7",
     "vue3-ts-jsoneditor": "^3.3.0"
   },
   "devDependencies": {
