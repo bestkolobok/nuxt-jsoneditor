@@ -29,7 +29,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
+          # semantic-release 26 requires Node >=26.13. A range keeps a cached older 26.x from being picked.
+          node-version: '^26.13.0'
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
 
