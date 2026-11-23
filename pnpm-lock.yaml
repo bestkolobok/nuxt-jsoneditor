@@ -15,8 +15,8 @@ importers:
         specifier: ^6.1.7
         version: 6.1.7
       vue3-ts-jsoneditor:
-        specifier: ^3.3.0
-        version: 3.3.0(vue@3.5.25(typescript@5.9.3))
+        specifier: ^3.5.0
+        version: 3.5.0(vue@3.5.25(typescript@5.9.3))
     devDependencies:
       '@commitlint/cli':
         specifier: ^20.1.0
@@ -3306,8 +3306,8 @@ packages:
   image-meta@0.2.2:
     resolution: {integrity: sha512-3MOLanc3sb3LNGWQl1RlQlNWURE5g32aUphrDyFeCsxBTk08iE3VNe4CwsUZ0Qs1X+EfX0+r29Sxdpza4B+yRA==}
 
-  immutable-json-patch@6.0.2:
-    resolution: {integrity: sha512-KwCA5DXJiyldda8SPha1zB+6+vbEi5/jRRcYii/6yFXlyu9ZjiSH/wPq8Ri2Hk8iGjjTMcHW3Z21S4MOpl7sOw==}
+  immutable-json-patch@6.0.3:
+    resolution: {integrity: sha512-qFLRzQLjteiTGy5tRJcYqvuu0r/GdQ1fE27IyNBrJ/k7yGSO0xFr6QX62TtmIqSvjQF3afcNFUHsGPYW7ydaHQ==}
 
   import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
@@ -3654,6 +3654,9 @@ packages:
 
   lodash-es@4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+
+  lodash-es@4.18.1:
+    resolution: {integrity: sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A==}
 
   lodash.camelcase@4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
@@ -5429,8 +5432,8 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  vanilla-jsoneditor@3.11.0:
-    resolution: {integrity: sha512-/Zw09Yv8Q2i1yC2q5cDsNtFpyFOQu1Aci4u8dsHwyzhueWnibCMteZz6n1aE9+RGgU92Ni5K4cXTMDUowJPE0A==}
+  vanilla-jsoneditor@3.13.1:
+    resolution: {integrity: sha512-6U/eD+clhhqlbt/G3CSEg6xn76cNKAAKh9ucUcLFbPRC7pG5igqcmp08TzpU1j77Kvp7TESABdTFzHekan0g1Q==}
 
   vanilla-picker@2.12.3:
     resolution: {integrity: sha512-qVkT1E7yMbUsB2mmJNFmaXMWE2hF8ffqzMMwe9zdAikd8u2VfnsVY2HQcOUi2F38bgbxzlJBEdS1UUhOXdF9GQ==}
@@ -5618,8 +5621,8 @@ packages:
     peerDependencies:
       typescript: '>=5.0.0'
 
-  vue3-ts-jsoneditor@3.3.0:
-    resolution: {integrity: sha512-HB+t/WR6c5BODKGcUGW0v88sIDMhxDLxXoW6xkakp6iAr6oRxVdbcvOZfuurL939Vsl54+2ACvWthzD40d/FQw==}
+  vue3-ts-jsoneditor@3.5.0:
+    resolution: {integrity: sha512-TvwzcEGa+O73s6nFUtMUXg9OiNYJm8+rie97H/loTE/Ln+8yHkM5RgviQrm0X6h3mywqYZSbyL+wqkrFkuZ3oA==}
     engines: {node: '>=20.19.0'}
     peerDependencies:
       vue: ^3.0.0
@@ -9281,7 +9284,7 @@ snapshots:
 
   image-meta@0.2.2: {}
 
-  immutable-json-patch@6.0.2: {}
+  immutable-json-patch@6.0.3: {}
 
   import-fresh@3.3.1:
     dependencies:
@@ -9604,6 +9607,8 @@ snapshots:
       p-locate: 6.0.0
 
   lodash-es@4.17.21: {}
+
+  lodash-es@4.18.1: {}
 
   lodash.camelcase@4.3.0: {}
 
@@ -11523,7 +11528,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vanilla-jsoneditor@3.11.0:
+  vanilla-jsoneditor@3.13.1:
     dependencies:
       '@codemirror/autocomplete': 6.20.0
       '@codemirror/commands': 6.10.0
@@ -11541,12 +11546,12 @@ snapshots:
       ajv: 8.17.1
       codemirror-wrapped-line-indent: 1.0.9(@codemirror/language@6.11.3)(@codemirror/state@6.5.2)(@codemirror/view@6.39.4)
       diff-sequences: 29.6.3
-      immutable-json-patch: 6.0.2
+      immutable-json-patch: 6.0.3
       jmespath: 0.16.0
       json-source-map: 0.6.1
       jsonpath-plus: 10.3.0
       jsonrepair: 3.13.1
-      lodash-es: 4.17.21
+      lodash-es: 4.18.1
       memoize-one: 6.0.0
       natural-compare-lite: 1.4.0
       svelte: 5.46.0
@@ -11741,10 +11746,10 @@ snapshots:
       '@vue/language-core': 3.1.8(typescript@5.9.3)
       typescript: 5.9.3
 
-  vue3-ts-jsoneditor@3.3.0(vue@3.5.25(typescript@5.9.3)):
+  vue3-ts-jsoneditor@3.5.0(vue@3.5.25(typescript@5.9.3)):
     dependencies:
-      immutable-json-patch: 6.0.2
-      vanilla-jsoneditor: 3.11.0
+      immutable-json-patch: 6.0.3
+      vanilla-jsoneditor: 3.13.1
       vue: 3.5.25(typescript@5.9.3)
 
   vue@3.5.25(typescript@5.9.3):

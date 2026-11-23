@@ -49,7 +49,7 @@
   "dependencies": {
     "@nuxt/kit": "^4.6.4",
     "defu": "^6.1.7",
-    "vue3-ts-jsoneditor": "^3.3.0"
+    "vue3-ts-jsoneditor": "^3.5.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",
