@@ -15,12 +15,12 @@ describe('nuxt-jsoneditor', async () => {
 
     it('should have default componentName', () => {
       const ctx = useTestContext();
-      expect(ctx.nuxt?.options.jsoneditor?.componentName).toBe('JsonEditor');
+      expect(ctx.nuxt?.options.jsoneditor).toMatchObject({componentName: 'JsonEditor'});
     });
 
     it('should have options object', () => {
       const ctx = useTestContext();
-      expect(ctx.nuxt?.options.jsoneditor?.options).toBeDefined();
+      expect(ctx.nuxt?.options.jsoneditor).toMatchObject({options: expect.any(Object)});
     });
 
     it('should merge options into runtimeConfig.public', () => {
