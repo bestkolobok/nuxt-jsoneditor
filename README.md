@@ -12,6 +12,8 @@
 # nuxt-jsoneditor
 #### Powered by [svelte-jsoneditor](https://www.npmjs.com/package/svelte-jsoneditor) and [vue3-ts-jsoneditor](https://www.npmjs.com/package/vue3-ts-jsoneditor)
 
+> 👋 **A note from the maintainer.** I've been building and maintaining this module since 2022, and I'll keep at it. I've also just launched [Fayna](https://fayna.ai/?utm_source=nuxt-jsoneditor&utm_medium=readme&utm_campaign=maintainer-note), a free résumé and cover-letter builder. It's new, still hard to find, and more than a hobby project for me. If you try it, tell me what you think, or pass it on to someone who's job hunting — that's the best help I could ask for.
+
 ## 🕹 Demo
 
 > you can 👀 a live demo [here](https://bestkolobok.github.io/vue3-jsoneditor/)
